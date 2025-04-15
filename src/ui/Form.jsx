@@ -4,7 +4,7 @@ const Form = styled.form`
   ${(props) =>
     props.type !== "modal" &&
     css`
-      padding: 2rem 4rem;
+      padding: 2.4rem 4rem;
 
       /* Box */
       background-color: var(--color-grey-0);
@@ -17,8 +17,8 @@ const Form = styled.form`
     css`
       width: 80rem;
     `}
-
-    overflow:hidden;
+    
+  overflow: hidden;
   font-size: 1.4rem;
 `;
 
