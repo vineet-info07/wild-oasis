@@ -15,10 +15,14 @@ function Cabins() {
         <p>Filter / Sort</p>
       </Row>
 
-      <Row>
+      <Row type="vertical">
         <CabinTable />
 
-        <Button onClick={() => setShowForm((show) => !show)}>
+        <Button
+          variation="primary"
+          size="medium"
+          onClick={() => setShowForm((show) => !show)}
+        >
           Add new cabin
         </Button>
         {showForm && <CreateCabinForm />}
