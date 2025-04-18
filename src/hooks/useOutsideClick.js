@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 
 export function useOutsideClick(handler, listenCapturing = true) {
   const ref = useRef();
+
   useEffect(
     function () {
       function handleClick(e) {
-        if (ref && !ref.current.contains(e.target)) {
-          //   console.log("Clicked Outside!");
+        if (ref.current && !ref.current.contains(e.target)) {
           handler();
         }
       }
@@ -18,4 +18,6 @@ export function useOutsideClick(handler, listenCapturing = true) {
     },
     [handler, listenCapturing]
   );
+
+  return ref;
 }
