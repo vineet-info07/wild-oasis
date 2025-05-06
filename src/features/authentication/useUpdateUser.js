@@ -6,10 +6,9 @@ function useUpdateUser() {
   const queryClient = useQueryClient();
   const { mutate: updateUser, isLoading: isUpdating } = useMutation({
     mutationFn: updateCurrentUser,
-    onSuccess: ({ user }) => {
+    onSuccess: () => {
       toast.success("User account successfully updated.");
       queryClient.invalidateQueries({ queryKey: ["user"] });
-      queryClient.setQueryData("user", user);
     },
     onError: (err) => {
       toast.error(err.message);
